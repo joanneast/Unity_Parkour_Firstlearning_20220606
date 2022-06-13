@@ -34,7 +34,7 @@ namespace Parkour
 
 
 
-        #region 功能：運作所需的複雜方法
+        #region 功能：實作該系統的複雜方法
 
         #endregion
 
@@ -42,9 +42,24 @@ namespace Parkour
 
         #region 事件：程式入口
 
+        // Awake：喚醒事件：載入遊戲前執行一次，用於取得元件等等
+        private void Awake()
+        {
+            anir = GetComponent<Animator>();
+            rig = GetComponent<Rigidbody2D>();
+        }
+
+
+        // Start：開始事件：播放遊戲時執行一次
         private void Start()
         {
             print("挖庫挖庫");
+        }
+
+        // Update：更新事件：每秒執行約六十次 =60FPS(Frame Per Secend)
+        private void Update()
+        {
+            print("<color=yellow>歐拉歐拉更新拳</color>");
         }
 
         #endregion
