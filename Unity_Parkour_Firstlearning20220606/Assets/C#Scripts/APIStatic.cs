@@ -74,7 +74,7 @@ namespace Parkour
             print("ab點之間距離：" + distance);
 
             //開啟連結
-            Application.OpenURL("https://unity.com/");
+            //Application.OpenURL("https://unity.com/");
 
             #endregion
         }

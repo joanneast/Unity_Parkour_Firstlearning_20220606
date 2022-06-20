@@ -33,9 +33,15 @@ namespace Parkour
         #endregion
 
 
-
+        /// <summary>
+        /// 跑步功能
+        /// </summary>
         #region 功能：實作該系統的複雜方法
-
+        private void Run()
+        {
+            print("跑步中");
+            rig.velocity = new Vector2(speedRun, rig.velocity.y);
+        }
         #endregion
 
 
@@ -53,13 +59,15 @@ namespace Parkour
         // Start：開始事件：播放遊戲時執行一次
         private void Start()
         {
-            print("挖庫挖庫");
+            //print("挖庫挖庫");
         }
 
         // Update：更新事件：每秒執行約六十次 =60FPS(Frame Per Secend)
         private void Update()
         {
-            print("<color=yellow>歐拉歐拉更新拳</color>");
+            //print("<color=yellow>歐拉歐拉更新拳</color>");
+
+            Run();
         }
 
         #endregion
