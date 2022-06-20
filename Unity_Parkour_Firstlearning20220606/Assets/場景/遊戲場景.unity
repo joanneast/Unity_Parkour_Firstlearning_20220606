@@ -929,7 +929,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedRun: 3.5
-  heightJump: 350
 --- !u!114 &2041333257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -942,6 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd9b77df118bae41b4bb40eb3c11806, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  heightJump: 800
 --- !u!1 &2083085784
 GameObject:
   m_ObjectHideFlags: 0

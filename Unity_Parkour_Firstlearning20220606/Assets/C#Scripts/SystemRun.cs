@@ -23,9 +23,6 @@ namespace Parkour
         [SerializeField, Header("跑步速度"), Tooltip("太空人的跑步速度"), Range(0,100)]
         private float speedRun = 3.5f;
         
-        [SerializeField, Header("跳躍高度"), Tooltip("太空人的跳躍高度"), Range(0, 100)]
-        private float heightJump = 350;
-        
         private Animator anir;
         
         private Rigidbody2D rig;
