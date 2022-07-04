@@ -86,7 +86,7 @@ namespace Parkour
             Collider2D touchyon = Physics2D.OverlapBox(transform.position + v3checkgroundoffset, v3checkgroundsize, 0,layercheckground);
             //print($"¸I¨ì¤F{touchyon}");
 
-            isground = true;
+            isground = touchyon;
         }
         #endregion
     }

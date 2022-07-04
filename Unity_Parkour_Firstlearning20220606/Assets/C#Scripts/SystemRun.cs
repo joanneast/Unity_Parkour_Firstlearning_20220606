@@ -19,12 +19,12 @@ namespace Parkour
          * Tooltip 提示：滑鼠游標停留在上方時顯示
          * Range 範圍：產生數值拉桿(僅可使用數值類型資料如 int, float, byte, long)
          */
-        
-        [SerializeField, Header("跑步速度"), Tooltip("太空人的跑步速度"), Range(0,100)]
+
+        [SerializeField, Header("跑步速度"), Tooltip("太空人的跑步速度"), Range(0, 100)]
         private float speedRun = 3.5f;
-        
+
         private Animator anir;
-        
+
         private Rigidbody2D rig;
 
         #endregion
@@ -37,7 +37,8 @@ namespace Parkour
         private void Run()
         {
             //print("跑步中");
-            rig.velocity = new Vector2(speedRun, rig.velocity.y);
+            float h = Input.GetAxis("Horizontal");
+            rig.velocity = new Vector2(speedRun * h, rig.velocity.y);
         }
         #endregion
 
@@ -65,6 +66,18 @@ namespace Parkour
             //print("<color=yellow>歐拉歐拉更新拳</color>");
 
             Run();
+        }
+
+        //此元件被勾選時執行一次
+        private void OnEnable()
+        {
+
+        }
+
+        //此元件被取消勾選時執行一次
+        private void OnDisable()
+        {
+            rig.velocity = Vector3.zero;
         }
 
         #endregion
