@@ -573,7 +573,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7769517, y: 1}
+    m_SensorSize: {x: 1.7785978, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -888,7 +888,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 2041333250}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f4ca54f16c624a74d91000bce9036f46, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -942,6 +942,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heightJump: 800
+  v3checkgroundsize: {x: 0.4, y: 0.2, z: 1}
+  v3checkgroundoffset: {x: 0, y: -0.6, z: 0}
+  colorcheckground: {r: 0.38216448, g: 0.676597, b: 0.7169812, a: 0.4745098}
+  layercheckground:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &2083085784
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,7 +1081,7 @@ GameObject:
   - component: {fileID: 2144513966}
   - component: {fileID: 2144513968}
   - component: {fileID: 2144513967}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "\u5730\u677F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2809,7 +2815,7 @@ CompositeCollider2D:
   m_GameObject: {fileID: 2144513961}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f4ca54f16c624a74d91000bce9036f46, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0

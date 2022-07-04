@@ -36,7 +36,7 @@ namespace Parkour
         #region 功能：實作該系統的複雜方法
         private void Run()
         {
-            print("跑步中");
+            //print("跑步中");
             rig.velocity = new Vector2(speedRun, rig.velocity.y);
         }
         #endregion
