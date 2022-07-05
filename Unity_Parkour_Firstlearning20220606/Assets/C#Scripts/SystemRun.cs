@@ -22,10 +22,13 @@ namespace Parkour
 
         [SerializeField, Header("跑步速度"), Tooltip("太空人的跑步速度"), Range(0, 100)]
         private float speedRun = 3.5f;
+        [SerializeField, Header("跑步動畫參數")]
+        private string swRun = "swRun";
 
         private Animator anir;
-
         private Rigidbody2D rig;
+        private bool clickRun;
+        private SpriteRenderer spr;
 
         #endregion
 
@@ -38,7 +41,7 @@ namespace Parkour
         {
             //print("跑步中");
             float h = Input.GetAxis("Horizontal");
-            rig.velocity = new Vector2(speedRun * h, rig.velocity.y);
+            rig.velocity = new Vector2(speedRun * h * 1.5F, rig.velocity.y);
         }
         #endregion
 
@@ -51,6 +54,7 @@ namespace Parkour
         {
             anir = GetComponent<Animator>();
             rig = GetComponent<Rigidbody2D>();
+            spr = GetComponent<SpriteRenderer>();
         }
 
 
@@ -66,6 +70,9 @@ namespace Parkour
             //print("<color=yellow>歐拉歐拉更新拳</color>");
 
             Run();
+            UpdateAnimator();
+            RunKey();
+            UpdateAnimator();
         }
 
         //此元件被勾選時執行一次
@@ -78,6 +85,32 @@ namespace Parkour
         private void OnDisable()
         {
             rig.velocity = Vector3.zero;
+        }
+
+        private void RunKey()
+        {
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                clickRun = true;
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow))
+            {
+                clickRun = false;
+            }
+
+            if (rig.velocity.x > 0.1f)
+            {
+                spr.flipX = false;
+            }
+            if (rig.velocity.x < -0.1f)
+            {
+                spr.flipX = true;
+            }
+        }
+
+        private void UpdateAnimator()
+        {
+            anir.SetBool(swRun, clickRun);
         }
 
         #endregion

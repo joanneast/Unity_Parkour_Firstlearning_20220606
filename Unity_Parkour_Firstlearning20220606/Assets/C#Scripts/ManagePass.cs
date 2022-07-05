@@ -27,7 +27,7 @@ namespace Parkour
                 systemJump.enabled = false;
                 systemRun.enabled = false;
                 manageFinal.enabled = true;
-                manageFinal.finaltitle = "GAME OVER";
+                manageFinal.finaltitle = "CONGRATUATIONS!";
             }
         }
         //兩個物件碰撞結束(離開)時執行一次
